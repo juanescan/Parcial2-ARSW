@@ -7,12 +7,12 @@ import edu.eci.arsw.myrestaurant.beans.TaxesCalculator;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
+import edu.eci.arsw.myrestaurant.beans.impl.colombia.StandardTaxesCalculator;
+@Service
 public class BillWithTaxesCalculator implements BillCalculator {
 
 
-    TaxesCalculator taxescalc;
+   StandardTaxesCalculator taxescalc = new StandardTaxesCalculator();
 
     @Override
     public int calculateBill(Order o, Map<String, RestaurantProduct> productsMap) {
